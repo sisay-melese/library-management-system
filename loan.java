@@ -26,4 +26,15 @@ public class Loan {
         book.setAvailable(true);
         returned = true;
     }
+    public void checkDueDate()  { 
+        if (returned){ 
+            System.out.println("Book already returned.");
+       }
+        else { 
+            if (LocalDate.now().isAfter(dueDate)) { 
+                System.out.println("Book is overdue! Due date was: " + dueDate); } 
+            else { System.out.println("Book is still within due date: " + dueDate); 
+                 }
+                } 
+             }
 }
