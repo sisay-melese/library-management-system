@@ -7,5 +7,6 @@ public class public class Main {
 
         loan.borrowBook();
         loan.returnBook();
+        loan.checkDueDate();
     }
 }
