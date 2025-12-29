@@ -1,20 +1,32 @@
-public class Member {
-    private String memberId;
-    private String name;
 
-    public Member(String memberId, String name) {
-        if (memberId == null || name == null) {
-            throw new IllegalArgumentException("Member ID and name cannot be null");
+    // Borrow a book
+    public void borrowBook() {
+        if (!book.isAvailable()) {
+            throw new IllegalStateException("Book is already borrowed");
         }
-        this.memberId = memberId;
-        this.name = name;
+        book.setAvailable(false);
+        System.out.println("Book borrowed successfully.");
     }
 
-    public String getMemberId() {
-        return memberId;
+    // Return a book
+    public void returnBook() {
+        if (returned) {
+            throw new IllegalStateException("Book has already been returned");
+        }
+        book.setAvailable(true);
+        returned = true;
+        System.out.println("Book returned successfully.");
     }
 
-    public String getName() {
-        return name;
+    public Book getBook() {
+        return book;
+    }
+
+    public Member getMember() {
+        return member;
+    }
+
+    public boolean isReturned() {
+        return returned;
     }
 }
