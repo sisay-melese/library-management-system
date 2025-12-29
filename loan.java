@@ -1,5 +1,4 @@
-
- public class Loan {
+public class Loan {
     private Book book;
     private Member member;
     private boolean returned;
